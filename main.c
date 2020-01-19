@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-typedef unsigned int bool;
+typedef int bool;
 
 # define N 9
 # define true 1
@@ -99,7 +99,7 @@ bool    solver(int arr[N][N])
     int num;
 
     num = 1;
-    if (!is_unsigned_cell(&row, &col))
+    if (!(is_unsigned_cell(&row, &col)))
         return (true);
     while (num <= N)
     {
@@ -120,6 +120,7 @@ void    print_sudoku(int arr[N][N])
 {
     int r;
     int c;
+    char p;
 
     r = 0;
     while (r < N)
@@ -127,7 +128,8 @@ void    print_sudoku(int arr[N][N])
         c = 0;
         while (c < N)
         {
-            write(1, &arr[r][c], 1);
+            p = arr[r][c] + '0';
+            write(1, &p, 1);
             write(1, "  ", 2);
             c++;
         }
@@ -136,7 +138,7 @@ void    print_sudoku(int arr[N][N])
     }
 }
 
-void    solve_sudoku(char **av)
+void    solve_sudoku(char *av[])
 {
     int r;
     int i;
@@ -150,21 +152,21 @@ void    solve_sudoku(char **av)
         while (c < N)
         {
             if (av[i][c] == '.')
-                BOARD[r][c] = '0';
+                BOARD[r][c] = 0;
             else
-                BOARD[r][c] = av[i][c];
+                BOARD[r][c] = av[i][c] - '0';
             c++;
         }
         r++;
         i++;
     }
-    if (solver())
-        print_sudoku();
+    if (solver(BOARD))
+        print_sudoku(BOARD);
     else
         write(1, "No solution\n", 12);
 }
 
-int     main(int ac, char **av)
+int     main(int ac, char *av[])
 {
     if (ac == N + 1)
         solve_sudoku(av);
