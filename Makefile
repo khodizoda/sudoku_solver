@@ -1,4 +1,4 @@
-NAME = rush_01
+NAME = sudoku
 
 GCC = gcc
 
@@ -8,11 +8,11 @@ HEAD = ./sudoku.h
 
 SRCS = ./is_row_safe.c ./is_col_safe.c ./is_sq_safe.c \
 		./is_unsigned_cell.c ./is_safe.c ./solver.c \
-		./print_sudoku.c ./solve_sudoku.c ./main.c
+		./print_sudoku.c ./solve_sudoku.c ./is_valid.c ./main.c
 
 OBJ = ./is_row_safe.o ./is_col_safe.o ./is_sq_safe.o \
 		./is_unsigned_cell.o ./is_safe.o ./solver.o \
-		./print_sudoku.o ./solve_sudoku.o ./main.o
+		./print_sudoku.o ./solve_sudoku.o ./is_valid.o ./main.o
 
 $(NAME): $(OBJ)
 	$(GCC) $(CFLAGS) $(OBJ) -o $(NAME)
