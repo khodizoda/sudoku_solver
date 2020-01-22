@@ -19,5 +19,7 @@ bool    is_safe(int row, int col, int num);
 bool    solver(int arr[N][N]);
 void    print_sudoku(int arr[N][N]);
 void    solve_sudoku(char *av[]);
+bool    is_valid(char **av);
+bool    len_valid(char *str);
 
 #endif
