@@ -14,6 +14,8 @@ OBJ = ./is_row_safe.o ./is_col_safe.o ./is_sq_safe.o \
 		./is_unsigned_cell.o ./is_safe.o ./solver.o \
 		./print_sudoku.o ./solve_sudoku.o ./is_valid.o ./len_valid.o ./main.o
 
+.SILENT:
+
 $(NAME): $(OBJ)
 	$(GCC) $(CFLAGS) $(OBJ) -o $(NAME)
 
@@ -21,6 +23,7 @@ $(OBJ): $(SRCS) $(HEAD)
 	$(GCC) -c $(CFLAGS) $(SRCS)
 
 all: $(NAME)
+	@echo Compiling $(NAME)...
 
 clean:
 	@/bin/rm -f $(OBJ)
