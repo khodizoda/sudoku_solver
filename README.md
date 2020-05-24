@@ -21,3 +21,4 @@ where lineN represents a characters string of values ranged between ’1’ and 
 "6.2..794."
 ```
 ![](./samples/sample.png)
+![](./samples/sample_gui.png)
