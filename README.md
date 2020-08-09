@@ -3,20 +3,20 @@ sudoku_solver is a program, that solves any valid [sudoku board](https://en.wiki
 
 ## Usage
 Download and compile repo:
-```
+```terminal
 git clone https://github.com/khodizoda/sudoku_solver
 cd sudoku_solver
 make
 ```
 
 Execute with:
-```
+```terminal
 ./sudoku line0 line1 line2 line3 line4 line5 line6 line7 line8
 ```
 where lineN represents a characters string of values ranged between ’1’ and ’9’ or ’ . ’ (for empty boxes).
 
 ## Example
-```
+```terminal
 ./sudoku ".......2." "...5..6.." ".....9..3" "476....9." ".3..16.7." ".5.....8." "..8.5...." "....2...."
 "6.2..794."
 ```
